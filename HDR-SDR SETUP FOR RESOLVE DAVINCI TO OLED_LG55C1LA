@@ -73,15 +73,15 @@
 			- Picture:
 
 				######################################################
-				##		 In picture menu				 			##
-				##		 Press: 1113111			  					##
-				##		 This opens a 'hidden' menu: 				##
-				##													##
-				##	---> HDR Signalling Override: 					##
-				##			- Colorimetry: P3 D65 					##
-				##			- EOTF: ST2048 							##
-				##			- Mastering Peak: 1000 					##
-				##													##
+				##		 In picture menu				 			
+				##		 Press: 1113111			  					
+				##		 This opens a 'hidden' menu: 				
+				##													
+				##	---> HDR Signalling Override: 					
+				##			- Colorimetry: P3 D65 					
+				##			- EOTF: ST2048 							
+				##			- Mastering Peak: 1000 					
+				##												
 				## 	** The rest of options should remain by default	##
 				######################################################
 
@@ -192,15 +192,15 @@
 			- Picture:
 
 				######################################################
-				##		 In picture menu				 			##
-				##		 Press: 1113111			  					##
-				##		 This opens a 'hidden' menu: 				##
-				##													##
-				##	---> HDR Signalling Override: 					##
-				##			- Colorimetry: BT709 					##
-				##			- EOTF: SDR Gamma 						##
-				##			- Mastering Peak: 1000 					##
-				##													##
+				##		 In picture menu				 			
+				##		 Press: 1113111			  					
+				##		 This opens a 'hidden' menu: 				
+				##													
+				##	---> HDR Signalling Override: 					
+				##			- Colorimetry: BT709 					
+				##			- EOTF: SDR Gamma 						
+				##			- Mastering Peak: 1000 					
+				##													
 				## 	** The rest of options should remain by default	##
 				######################################################
 
