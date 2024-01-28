@@ -1,6 +1,16 @@
 ## demux and remux Dolby Vision Files with:
 ## ALL CLI
 
+# from dolby laboratories github repo: https://github.com/DolbyLaboratories
+# FOR MP4 HDR Dolby Vision
+
+/// DEMUXER
+## https://github.com/DolbyLaboratories/dlb_mp4demux.git
+
+/// MUXER
+## https://github.com/DolbyLaboratories/dlb_mp4base.git
+
+
 
 # HDR format            : Dolby Vision
 # HDR format            : Dolby Vision, Version 1.0, dvhe.05.07, BL+RPU
