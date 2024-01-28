@@ -1,0 +1,240 @@
+###########################################################################
+
+###########################################################################
+	HDR-SDR SETUP FOR RESOLVE DAVINCI TO OLED_LG55G1LA with HDMI 2.1
+###########################################################################
+
+###########################################################################
+
+
+
+### /// This setup is meant to get equivalent images in SDR and HDR
+### /// From the same input file.
+### /// So after the mapping HDR content can be created/viewed
+
+###########################################################################
+----------------------------- ///   HDR   /// -----------------------------
+###########################################################################
+
+
+##### _____ Hardware _____ #####
+
+	- Macbook Air M2
+
+	- OLED LG55G1LA
+
+	- HDMI 2.1 Cable 6.6 FT, Certified Ultra High Speed HDMI Cable 4k 120Hz 144Hz 8k 60Hz 48Gbps
+
+	- Cable Matters 48Gbps USB C to HDMI 2.1 Adapter, Support 8K 60Hz / 4K 120Hz HDR, Thunderbolt 4 to HDMI 2.1, HDMI 2.1 to USB C Adapter, Compatible with iPhone 15 - Maximum Resolution on Mac is 4K@60Hz
+
+
+##### _____ System _____ #####
+
+------- MAC OS
+		-- Display settings:
+			- conected LG: use as separated display
+			- Colour Profile: LG TV SSCR2
+			- Refresh rate: 60 Hertz
+			- High Dynamic Range: ON
+
+------- Davinci Resolve:
+		-- "Global" Preferences:
+			- General:
+				- Use Mac display color profiles for viewers
+				- Automaticaly tag Rec.709 Scene clips as Rec.709-A
+
+		-- Project Settings:
+			- Master Settings:
+				- Video Monitoring:
+					- Video Format: Use 4:4:4 SDI
+					- SDI Configuration: Dual Link
+					- Data Levels: Full
+					- Video Bit Depth: 10bit
+					- Enable HDR metadata: True
+
+			- Color Management:
+				- Color Science: ACEScct
+				- ACES version: 1.3 ( ** latest ** )
+				- ACES input transform: none
+				- Apply ACES reference gammut compress: False
+				- ACES Output Transform: P3-D65 ST2048 (1000nits)
+				- ACES mid gray luminance: 15.00 nits
+				- Process node LUTS in: ACEScc AP1 timeline space
+				- Use color space aware grading tools: False
+				- Apply resize transforms in: Gamma
+				- Disable tonemapping for Fusion conversions: True
+				- Graphics white level: 100 nits ( ** 100 to 200 ** )
+				- HDR mastering for: 1000 nits
+
+------- OLED LG55G1LA:
+		-- HDR Picture Mode: Standard (USER)
+
+		-- All Settings:
+			- Picture:
+
+				######################################################
+				##		 In picture menu				 			##
+				##		 Press: 1113111			  					##
+				##		 This opens a 'hidden' menu: 				##
+				##													##
+				##	---> HDR Signalling Override: 					##
+				##			- Colorimetry: P3 D65 					##
+				##			- EOTF: ST2048 							##
+				##			- Mastering Peak: 1000 					##
+				##													##
+				## 	** The rest of options should remain by default	##
+				######################################################
+
+				- Aspect Ratio: Original
+
+
+				- Advanced Settings:
+					- Brightness:
+						- OLED Pixel Brightness: 100
+						- Adjust contrast: 100
+						- Screen brightness: 50
+						- Auto Dynamic Contrast: OFF
+						- HDR Tone Mapping: OFF
+						- Peak Brightness: High
+						- Gamma: (** as is from EOTF **)
+						- Black Level: Auto
+						- Motion Eye Care: OFF
+
+					- Color:
+						- Color Depth: 65
+						- Tint: 0
+						- Color Gamut: Native
+					** rest of options as desired **
+
+					- Clarity:
+						- Adjust sharpness: 25
+						- Super Resolution: OFF
+						- Noise reduction: OFF
+						- MPEG Noise reduction: OFF
+						- Smooth Gradation: OFF
+						- Cinema Screen: ON
+						- TruMotion: OFF
+
+			- General:
+				- Devices:
+					- HDMI Settings:
+						- HDMI Deep Colour:
+							- 4K
+
+
+###########################################################################
+///////////////////////////////////////////////////////////////////////////
+###########################################################################
+///////////////////////////////////////////////////////////////////////////
+###########################################################################
+///////////////////////////////////////////////////////////////////////////
+
+
+
+
+###########################################################################
+----------------------------- ///   SDR   /// -----------------------------
+###########################################################################
+
+
+##### _____ Hardware _____ ##### (Same as SDR but no need for HDMI 2.1)
+
+	- Macbook Air M2
+
+	- OLED LG55G1LA
+
+	- HDMI 2.1 Cable 6.6 FT, Certified Ultra High Speed HDMI Cable 4k 120Hz 144Hz 8k 60Hz 48Gbps
+
+	- Cable Matters 48Gbps USB C to HDMI 2.1 Adapter, Support 8K 60Hz / 4K 120Hz HDR, Thunderbolt 4 to HDMI 2.1, HDMI 2.1 to USB C Adapter, Compatible with iPhone 15 - Maximum Resolution on Mac is 4K@60Hz
+
+
+##### _____ System _____ #####
+
+------- MAC OS
+		-- Display settings:
+			- conected LG: use as separated display
+			- Colour Profile: LG TV SSCR2
+			- Refresh rate: 60 Hertz
+			- High Dynamic Range: OFF
+
+------- Davinci Resolve:
+		-- "Global" Preferences:
+			- General:
+				- Use Mac display color profiles for viewers
+				- Automaticaly tag Rec.709 Scene clips as Rec.709-A
+
+		-- Project Settings:
+			- Master Settings:
+				- Video Monitoring:
+					- Video Format: Use 4:4:4 SDI
+					- SDI Configuration: Dual Link
+					- Data Levels: Full
+					- Video Bit Depth: 10bit
+					- Enable HDR metadata: True
+
+			- Color Management:
+				- Color Science: ACEScct
+				- ACES version: 1.3 ( ** latest ** )
+				- ACES input transform: none
+				- Apply ACES reference gammut compress: False
+				- ACES Output Transform: Rec 709
+				- Process node LUTS in: ACEScc AP1 timeline space
+				- Use color space aware grading tools: False
+				- Apply resize transforms in: Gamma
+				- Disable tonemapping for Fusion conversions: True
+				- Graphics white level: 100 nits ( ** 100 to 200 ** )
+				- HDR mastering for: 1000 nits
+
+------- OLED LG55G1LA:
+		-- Picture Mode: Standard (USER)
+
+		-- All Settings:
+			- Picture:
+
+				######################################################
+				##		 In picture menu				 			##
+				##		 Press: 1113111			  					##
+				##		 This opens a 'hidden' menu: 				##
+				##													##
+				##	---> HDR Signalling Override: 					##
+				##			- Colorimetry: BT709 					##
+				##			- EOTF: SDR Gamma 						##
+				##			- Mastering Peak: 1000 					##
+				##													##
+				## 	** The rest of options should remain by default	##
+				######################################################
+
+				- Aspect Ratio: Original
+
+
+				- Advanced Settings:
+					- Brightness:
+						- OLED Pixel Brightness: 100
+						- Adjust contrast: 100
+						- Screen brightness: 55
+						- Auto Dynamic Contrast: OFF
+						- Peak Brightness: High
+						- Gamma: 2.2 (** for rec709 **)
+						- Black Level: Auto
+						- Motion Eye Care: OFF
+
+					- Color:
+						- Color Depth: 50
+						- Tint: 0
+						- Color Gamut: Auto Detect
+					** rest of options as desired **
+
+					- Clarity:
+						- Adjust sharpness: 25
+						- Super Resolution: OFF
+						- Noise reduction: OFF
+						- MPEG Noise reduction: OFF
+						- Smooth Gradation: OFF
+						- Cinema Screen: ON
+						- TruMotion: OFF
+
+			- General:
+				- Devices:
+					- HDMI Settings:
+						- HDMI Deep Colour:
+							- OFF

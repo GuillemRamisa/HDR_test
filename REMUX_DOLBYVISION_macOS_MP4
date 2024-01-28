@@ -1,0 +1,38 @@
+## demux and remux Dolby Vision Files with:
+## ALL CLI
+
+
+# HDR format            : Dolby Vision
+# HDR format            : Dolby Vision, Version 1.0, dvhe.05.07, BL+RPU
+# HDR_Format_Commercial : Dolby Vision
+# HDR_Format_Version    : 1.0
+# HDR_Format_Profile    : dvhe.05
+# HDR_Format_Level      : 07
+# HDR_Format_Settings   : BL+RPU
+# Internet media type   : video/H265
+# Codec ID              : dvhe
+# Codec ID/Info         : High Efficiency Video Coding with Dolby Vision
+
+##
+#----------------------------------#
+##
+
+### DEMUX ###
+
+# navigate to lacotion of the DEMUXER executable
+# Execute cli command with
+# ./mp4demuxer_mac --input-file <...> --output-folder <...>
+# example:
+#./mp4demuxer_mac --input-file /Users/guillemramisadesoto/Documents/HDR/DOLBY_VISION_TEST_DEMUX/DOLBYVISION_3840x2160_16MBPS.mp4 --output-folder /Users/guillemramisadesoto/Documents/HDR/DOLBY_VISION_TEST_DEMUX/
+
+### REMUX ###
+
+# navigate to lacotion of the MUXER executable
+# Execute cli command with
+# cli executable / output filename / input AUDIO(from demuxer) / input video(from demuxer) / dv flags (dolby vision) --dv-profile 5 --dvh1flag 1
+
+# ./mp4muxer_mac -o <...> -i <...audio> -i <...video> --dv-profile 5 --dvh1flag 1
+# example:
+#./mp4muxer_mac -o /Users/guillemramisadesoto/Documents/HDR/DOLBY_VISION_TEST_DEMUX/REMUXED_____DOLBYVISION_3840x2160_16MBPS.mp4 -i /Users/guillemramisadesoto/Documents/HDR/DOLBY_VISION_TEST_DEMUX/out_2.aac -i /Users/guillemramisadesoto/Documents/HDR/DOLBY_VISION_TEST_DEMUX/out_1.h265 --dv-profile 5 --dvh1flag 1
+
+
