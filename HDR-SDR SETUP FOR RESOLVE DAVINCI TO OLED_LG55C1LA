@@ -202,6 +202,7 @@
 				##			- Mastering Peak: 1000 					
 				##													
 				## 	** The rest of options should remain by default	##
+				##  ** this is aplied if available option
 				######################################################
 
 				- Aspect Ratio: Original
@@ -238,3 +239,22 @@
 					- HDMI Settings:
 						- HDMI Deep Colour:
 							- OFF
+
+
+
+
+###########################################################################
+------------------------ ///   DOLBY VISION   /// -------------------------
+###########################################################################
+
+***************************************************************************
+/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///
+
+The dolby Vision content mapping preview is only VISIBLE IF:
+	- Mac OS display HDR is: DISBLED
+	- "Use Mac display color profiles for viewers" is: OFF
+	- Davinci ODT is "HDR" : P3D65 ST2084(1000nits)
+	- OLED display settings to SDR (EOTF + PRIMARIES)
+
+/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///
+***************************************************************************
