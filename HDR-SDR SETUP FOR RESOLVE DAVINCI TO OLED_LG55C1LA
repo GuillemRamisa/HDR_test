@@ -8,9 +8,16 @@
 
 
 
-### /// This setup is meant to get equivalent images in SDR and HDR
-### /// From the same input file.
-### /// So after the mapping HDR content can be created/viewed
+### /// This setup is meant:
+### /// 	To get equivalent images in SDR and HDR
+### /// 	To view HDR content in an HDR monitor
+### /// 	To map SDR to HDR
+### /// 	To export HDR in several formats (HDR 10, HLG, Dolby Vision)
+### /// 	To colormanage resolve projects for HDR grading/mastering/authoring
+### /// 	To create and display a Dolby Vision material using CMU (Content Mapping Unit)
+### /// 	To ACES colormanage project
+
+
 
 ###########################################################################
 ----------------------------- ///   HDR   /// -----------------------------
@@ -241,6 +248,113 @@
 							- OFF
 
 
+/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///
+***************************************************************************
+
+###########################################################################
+------------------------ ///    HDR EXPORT    /// -------------------------
+###########################################################################
+
+***************************************************************************
+/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///
+
+
+
+- If you need to export Raw aces no ODT:
+	- Project settings
+		- ACES Output Device Transform: None
+		//// This ensures an ACES AP0 Lin, not cct ////
+
+
+- .EXR
+	- No Compression
+	- Data Levels: Full
+
+- .mov
+	- Apple ProRes
+		- 422Hq
+		- 4444
+	- Data Levels: Video
+
+***************************************************************************
+/// /// /// /// /// /// // HDR 10 Export // /// /// /// /// /// /// /// ///
+***************************************************************************
+
+*** /// IMPORTANT SETINGS ARE THE PROJECT COLORMANAGEMENT ODT AND THE TAGS IN THE EXPORT PAGE /// ***
+
+	- For a P3-D65 project-timeline: P3-D65 ST2048 (1000nits)
+		- Colorspace TAG: P3-D65
+		- Gamma TAG (EOTF): Rec.2100 ST2048
+
+	- For a REC 2020 project-timeline: Rec.2020 ST2048 (1000nits. P3D65 Limited)
+		- Colorspace TAG: Rec.2020
+		- Gamma TAG (EOTF): Rec.2100 ST2048
+
+
+***************************************************************************
+/// /// /// /// /// /// ///  HLG Export /// /// /// /// /// /// /// /// ///
+***************************************************************************
+
+*** /// IMPORTANT SETINGS ARE THE PROJECT COLORMANAGEMENT ODT AND THE TAGS IN THE EXPORT PAGE /// ***
+
+	- For a HLG project-timeline: Rec.2020 HLG (1000 nits, P3D65 Limited)
+		- Colorspace TAG: Rec.2020
+		- Gamma TAG (EOTF): Rec.2100 HLG
+
+
+
+
+***************************************************************************
+/// /// /// /// /// /// Dolby Vision Export /// /// /// /// /// /// /// ///
+***************************************************************************
+
+Without CMU (content mapping unit) - Full Dolby Vision export
+
+- .TIFF
+	- 16bit
+
+- .mov
+	- Apple ProRes
+		- 422Hq
+		- 4444
+		- Data Levels: Full
+
+	- H265
+
+
+EXPORT Dolby Vision XML File:
+	- DaVinci Resolve:
+		- Edit page
+			- Select Timelene
+				- right click
+					- Timelines
+						- Export
+							- Dolby Vision XML... :
+								-- Version
+								-- Encoding Primaries
+								-- Canvas Aspect Ratio
+
+
+EXPORT Dolby Vision SDR With trims using the CMU (Content Mapping Unit):
+
+***	
+	This is usefullto review with client that has no HDR monitoring and an SDR mapped
+	from an HDR needs to be reviewed
+***
+
+	- From an HDR timeline: P3-D65 ST2048 (1000nits)
+		- Deliver Page
+			- .mov
+				- Apple ProRes
+					- 422Hq
+					- Data Levels: Full
+
+				- Colorspace TAG: Rec.709
+				- Gamma TAG (EOTF): Gamma 2.4
+
+				- Tone Mapping:
+					- Dolby Vision
+					- 100-nit, BT709, BT1886(Gamma2.4), Full (Home)
 
 
 ###########################################################################
@@ -258,3 +372,6 @@ The dolby Vision content mapping preview is only VISIBLE IF:
 
 /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///
 ***************************************************************************
+
+
+Dolby Vision requires a sdr 100-nit, BT709, BT1886(Gamma2.4), Full
